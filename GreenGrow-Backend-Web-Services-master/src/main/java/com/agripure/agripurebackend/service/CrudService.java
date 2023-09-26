@@ -8,4 +8,7 @@ public interface CrudService<T> {
     void delete(Long id) throws Exception;
     List<T> getAll() throws Exception;
     Optional<T> getById(Long id) throws Exception;
+
+
+    
 }
