@@ -45,21 +45,23 @@ export class LogInComponent implements OnInit {
   }
 
   submitForm() {
-    //cuando se haga submit ir al dashboard
-    if (
-      this.usersList.find((user: User) => {
-        return (
-          user.email == this.loginForm?.get('email')?.value &&
-          user.password == this.loginForm?.get('password')?.value
-        );
-      })
-    ) {
+    const foundUser = this.usersList.find((user: User) => {
+      return (
+        user.email == this.loginForm?.get('email')?.value &&
+        user.password == this.loginForm?.get('password')?.value
+      );
+    });
+  
+    if (foundUser) {
+      // Guardar el usuario en localStorage
+      localStorage.setItem('currentUser', JSON.stringify(foundUser));
+  
+      // Ir al dashboard
       this.router.navigate(['/plants']);
-      return;
+    } else {
+      // Mostrar alerta si el usuario no es encontrado
+      alert('User not found. An error has occurred.');
     }
-
-    
-    alert('An error has ocurred');
   }
   getErrorEmailMessage() {
     if (this.loginForm?.get('email')?.hasError('email')) {

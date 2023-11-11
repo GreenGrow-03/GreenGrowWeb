@@ -46,7 +46,8 @@ import { DialogChangeEmailComponent } from './components/dialog-change-email/dia
 import { GoogleMapsModule } from '@angular/google-maps';
 import { DialogDeleteParcelComponent } from './components/dialog-delete-parcel/dialog-delete-parcel.component';
 import { DialogAddPlotComponent } from './components/dialog-add-plot/dialog-add-plot.component';
-import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component'
+import { DialogConfirmationComponent } from './components/dialog-confirmation/dialog-confirmation.component';
+import { CommunityComponent } from './pages/community/community.component'
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { DialogConfirmationComponent } from './components/dialog-confirmation/di
     DialogDeleteParcelComponent,
     DialogAddPlotComponent,
     DialogConfirmationComponent,
+    CommunityComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,6 +10,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PlotsComponent } from './pages/plots/plots.component';
 import {DetailsComponent} from "./pages/details/details.component";
 import { DialogAddPlotComponent } from './components/dialog-add-plot/dialog-add-plot.component';
+import { CommunityComponent } from './pages/community/community.component';
 
 const routes: Routes = [
   {
@@ -52,7 +53,13 @@ const routes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent,
+  },
+  {
+    path:'community',
+    component:CommunityComponent
   }
+
+
 ];
 
 @NgModule({

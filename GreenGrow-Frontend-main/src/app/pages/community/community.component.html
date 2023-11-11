@@ -1,0 +1,27 @@
+
+
+
+<div class="community-chat">
+    <!-- Mensaje de bienvenida -->
+    <div class="header-message">
+        Chat de GreenGrow
+      </div>
+
+    <!-- Área para mostrar mensajes -->
+    <div class="message-display " #scrollMe>
+        <!-- Los mensajes se mostrarán aquí -->
+        <div *ngFor="let message of messages" class="message-container">
+            <div class="message">
+                <div class="author">{{ message.author }}</div>
+                <div class="message-content">{{ message.message }}</div>
+                <div class="message-date">{{ formatMessageDate(message.messageDate) }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Campo de entrada y botón para enviar mensajes -->
+    <div class="message-input-container">
+        <input type="text" [(ngModel)]="newMessage" placeholder="Escribe tu mensaje aquí..." class="message-input">
+        <button (click)="sendMessage()" class="send-button">Enviar</button>
+    </div>
+</div>

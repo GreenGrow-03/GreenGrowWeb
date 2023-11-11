@@ -11,7 +11,7 @@ export class PlantsComponent implements OnInit, OnChanges {
   plants: Plants[] = [];
   plantsView: Plants[] = [];
   input: string = '';
-  messageSubtitle: string = 'Your Plants: ';
+  messageSubtitle: string = 'Your GreenPlants: ';
 
   constructor(private plantsService: PlantsService) {}
   ngOnChanges(changes: SimpleChanges): void {}

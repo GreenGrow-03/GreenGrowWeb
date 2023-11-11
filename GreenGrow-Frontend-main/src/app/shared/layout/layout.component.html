@@ -15,21 +15,57 @@
     <div style="display: grid; grid-template-rows: 1fr 3fr; height: 50vh;">
       <div>
         <button mat-button class="menu-button" routerLink="/plants">
-          <mat-icon>local_florist</mat-icon>
-          <span>Mis plantas</span>
+          <mat-icon>eco</mat-icon>
+
+          <span>GreenPlants</span>
         </button>
         <button mat-button class="menu-button" routerLink="/calendar">
-          <mat-icon>calendar_today</mat-icon>
+          <mat-icon>event</mat-icon>
+
           <span>Calendario</span>
         </button>
-        <button mat-button class="menu-button" routerLink="/plots">
+
+
+
+        <!-- Comentaremos este boton -->
+        <!--  <button mat-button class="menu-button" routerLink="/plots">
           <mat-icon>account_balance_wallet</mat-icon>
           <span>Mis parcelas</span>
+        </button>  -->
+
+
+
+
+        <button mat-button class="menu-button" routerLink="/community">
+          <mat-icon>group</mat-icon>
+
+          <span>Comunidad</span>
         </button>
+
+
+
+
         <button mat-button class="menu-button" routerLink="/forecast">
-          <mat-icon>cloud_queue</mat-icon>
-          <span>Pronostico</span>
+          <mat-icon>wb_cloudy</mat-icon>
+
+          <span>Tiempo</span>
         </button>
+
+
+
+
+
+        <div class="slogan">
+          <div class="icon-container">
+            <mat-icon>wb_sunny</mat-icon>
+          </div>
+          <span>Tus cosechas</span>
+          <span>Tu vida</span>
+        </div>
+        
+
+
+
       </div>
       <div style="align-self: end; justify-self: start;">
         <button mat-button (click)="menuTrigger.openMenu()">
