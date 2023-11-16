@@ -73,3 +73,4 @@ export class EventService {
       .pipe(retry(2), catchError(this.handleError));
   }
 }
+
