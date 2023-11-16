@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 export class ChatService {
 
   //urlbase
-  basePath = 'http://localhost:8080/api/messages';
+  basePath = 'https://greengrowapi.onrender.com/api/messages';
 
   
 

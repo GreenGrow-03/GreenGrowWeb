@@ -13,7 +13,7 @@ import { ToDo } from '../model/Event';
 })
 export class EventService {
   //Event Endpoint
-  basePath = 'http://localhost:8080/api/events';
+  basePath = 'https://greengrowapi.onrender.com/api/events';
 
   httpOptions = {
     headers: new HttpHeaders({

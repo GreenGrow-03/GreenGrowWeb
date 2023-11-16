@@ -10,6 +10,6 @@ export class PlotsService extends TemplateService<Plot>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.basePath = 'http://localhost:3000/api/v1/plot'
+    this.basePath = 'https://greengrowapi.onrender.com/api/plot'
    }
 }

@@ -9,6 +9,6 @@ import { User } from '../model/User';
 export class UsersService extends TemplateService<User> {
   constructor(http: HttpClient) {
     super(http);
-    this.basePath = 'http://localhost:8080/api/users';
+    this.basePath = 'https://greengrowapi.onrender.com/api/users';
   }
 }

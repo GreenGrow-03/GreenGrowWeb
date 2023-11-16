@@ -51,7 +51,7 @@ export class DialogSavePlantComponent implements OnInit, OnChanges {
 
   savePlant() {
     if (this.plant.saved) {
-      this.plantsService.patch(this.plant.id, { savePlant: false }).subscribe();
+      this.plantsService.delete(this.plant.id).subscribe();
     } else {
       this.plantsService.patch(this.plant.id, { savePlant: true }).subscribe();
     }
