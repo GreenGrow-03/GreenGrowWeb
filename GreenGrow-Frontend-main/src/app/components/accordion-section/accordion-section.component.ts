@@ -6,7 +6,7 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { ToDo } from 'src/app/pages/calendar/model/Event';
+//import { ToDo } from 'src/app/pages/calendar/model/Event';
 import { EventService } from 'src/app/pages/calendar/services/event.service';
 import { Plants } from '../../pages/plants/model/Plants';
 import { PlantsService } from '../../pages/plants/service/plants.service';
@@ -36,7 +36,7 @@ export class AccordionSectionComponent implements OnInit, OnChanges {
     { index: 14, color: '#4D02AC' },
   ];
 
-  eventData: ToDo;
+  //eventData: ToDo;
 
   actualDate: Date;
 
@@ -69,7 +69,7 @@ export class AccordionSectionComponent implements OnInit, OnChanges {
     private eventService: EventService,
     private dialog: MatDialog
   ) {
-    this.eventData = {} as ToDo;
+   // this.eventData = {} as ToDo;
     this.actualDate = new Date();
     this.actualDate.setHours(0, 0, 0, 0);
   }
@@ -84,22 +84,22 @@ export class AccordionSectionComponent implements OnInit, OnChanges {
 
   addEventFert() {
     for (let index = 0; index < 3; index++) {
-      this.eventData.id = 0;
-      this.eventData.date = this.plusDays(this.actualDate, index);
-      this.eventData.description =
+    //  this.eventData.id = 0;
+    //  this.eventData.date = this.plusDays(this.actualDate, index);
+     // this.eventData.description =
         (index + 1).toString() + '° Fertilization of ' + this.plant.name;
-      this.eventService.create(1, this.eventData).subscribe();
+     // this.eventService.create(1, this.eventData).subscribe();
     }
     this.showDialog();
   }
 
   addEventFumig() {
     for (let index = 0; index < 3; index++) {
-      this.eventData.id = 0;
-      this.eventData.date = this.plusDays(this.actualDate, index);
-      this.eventData.description =
+    //  this.eventData.id = 0;
+    //  this.eventData.date = this.plusDays(this.actualDate, index);
+     // this.eventData.description =
         (index + 1).toString() + '° Fumigation of ' + this.plant.name;
-      this.eventService.create(1, this.eventData).subscribe();
+    //  this.eventService.create(1, this.eventData).subscribe();
     }
     this.showDialog();
   }

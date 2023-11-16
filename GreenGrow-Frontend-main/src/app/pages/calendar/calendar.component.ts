@@ -5,7 +5,7 @@ import {
   MatTableDataSource,
   _MatTableDataSource,
 } from '@angular/material/table';
-import { ToDo } from './model/Event';
+//import { ToDo } from './model/Event';
 import { EventService } from './services/event.service';
 
 @Component({
@@ -18,8 +18,8 @@ export class CalendarComponent implements OnInit {
 
   userId = 5;
 
-  eventData: ToDo;
-  dataSource: MatTableDataSource<ToDo>;
+ // eventData: ToDo;
+  //dataSource: MatTableDataSource<ToDo>;
   displayedColumns: string[] = ['actions', 'description'];
 
   @ViewChild('eventForm', { static: false })
@@ -29,22 +29,22 @@ export class CalendarComponent implements OnInit {
   paginator!: MatPaginator;
 
   constructor(private eventService: EventService) {
-    this.eventData = {} as ToDo;
-    this.dataSource = new MatTableDataSource<ToDo>();
+  //  this.eventData = {} as ToDo;
+  //  this.dataSource = new MatTableDataSource<ToDo>();
     const now = new Date();
     now.setHours(0, 0, 0, 0);
     this.selected = now;
   }
 
   ngOnInit(): void {
-    this.dataSource.paginator = this.paginator;
+  //  this.dataSource.paginator = this.paginator;
     this.getEventsbyDate();
   }
 
   getEventsbyDate() {
-    this.eventService.getByDate(this.selected).subscribe((response) => {
-      this.dataSource.data = response;
-    });
+ //   this.eventService.getByDate(this.selected).subscribe((response) => {
+  //    this.dataSource.data = response;
+  //  });
   }
 
   handleDateChange(date: Date) {
@@ -53,25 +53,25 @@ export class CalendarComponent implements OnInit {
   }
 
   deleteEvent(id: number) {
-    this.eventService.delete(id).subscribe(() => {
-      this.dataSource.data = this.dataSource.data.filter((o: ToDo) => {
-        return o.id !== id ? o : false;
-      });
-    });
-    console.log(this.dataSource.data);
+ //   this.eventService.delete(id).subscribe(() => {
+  //    this.dataSource.data = this.dataSource.data.filter((o: ToDo) => {
+     //   return o.id !== id ? o : false;
+  //    });
+   // });
+  //  console.log(this.dataSource.data);
   }
 
   addEvent() {
-    this.eventData.id = 0;
-    this.eventData.date = this.selected;
-    this.eventService
-      .create(this.userId, this.eventData)
-      .subscribe((response) => {
-        this.dataSource.data.push({ ...response });
-        this.dataSource.data = this.dataSource.data.map((o) => {
-          return o;
-        });
-      });
+ //   this.eventData.id = 0;
+ //   this.eventData.date = this.selected;
+ //   this.eventService
+  //    .create(this.userId, this.eventData)
+   //  .subscribe((response) => {
+    //    this.dataSource.data.push({ ...response });
+     //   this.dataSource.data = this.dataSource.data.map((o) => {
+     //     return o;
+    //    });
+    //  });
     this.eventForm.resetForm();
   }
 
