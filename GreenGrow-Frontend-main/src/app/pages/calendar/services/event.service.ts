@@ -6,10 +6,11 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-import { ToDo } from '../model/Event';
+// import { ToDo } from '../model/Event';
 
 @Injectable({
   providedIn: 'root',
+  // as
 })
 export class EventService {
   //Event Endpoint
@@ -42,6 +43,7 @@ export class EventService {
   }
 
   //Create Event
+  /*
   create(userId: any, item: ToDo): Observable<ToDo> {
     let urlPath = `http://localhost:8080/api/events/${userId}/`;
     return this.http
@@ -62,7 +64,7 @@ export class EventService {
       .get<ToDo>(urlPath, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-
+*/
   //Delete Event
   delete(id: any) {
     let urlPath = `http://localhost:8080/api/events/${id}`;
