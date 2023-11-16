@@ -6,7 +6,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
-//import { ToDo } from '../model/Event';
+import { ToDo } from '../model/event';
 
 @Injectable({
   providedIn: 'root',
@@ -43,12 +43,12 @@ export class EventService {
   }
 
   //Create Event
-  /*
+ 
   create(userId: any, item: ToDo): Observable<ToDo> {
     let urlPath = `http://localhost:8080/api/events/${userId}/`;
     return this.http
-  //    .post<ToDo>(urlPath, JSON.stringify(item), this.httpOptions)
-   //   .pipe(retry(2), catchError(this.handleError));
+      .post<ToDo>(urlPath, JSON.stringify(item), this.httpOptions)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   //Get Event by date
@@ -72,5 +72,4 @@ export class EventService {
       .delete(urlPath, this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }
-  */
 }
